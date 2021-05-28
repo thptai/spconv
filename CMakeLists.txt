@@ -34,7 +34,7 @@ if (SPCONV_BuildCUDA)
     find_library(CUDA_CUBLAS NAMES cublas HINTS ${CUDA_LIB_PATH_HINTS})
     torch_cuda_get_nvcc_gencode_flag(NVCC_FLAGS_EXTRA)
     string (REPLACE ";" " " NVCC_FLAGS_EXTRA_STR "${NVCC_FLAGS_EXTRA}")
-    string(APPEND CMAKE_CUDA_FLAGS " -gencode arch=compute_70,code=sm_70") #pita-change
+    string(APPEND CMAKE_CUDA_FLAGS " -gencode arch=compute_52,code=sm_52") #pita-change
     set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} ${NVCC_FLAGS_EXTRA_STR}")
     add_compile_definitions(TV_CUDA)
 endif()
