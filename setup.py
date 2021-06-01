@@ -19,6 +19,8 @@ SPCONV_FORCE_BUILD_CUDA = os.getenv("SPCONV_FORCE_BUILD_CUDA")
 
 PYTHON_VERSION = "{}.{}".format(sys.version_info.major, sys.version_info.minor)
 
+print(PYTHON_VERSION)
+
 remove_device = re.search(r"(\+|\.)(dev|cu|cpu)", torch.__version__)
 PYTORCH_VERSION = torch.__version__
 if remove_device is not None:
